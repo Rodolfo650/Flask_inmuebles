@@ -38,10 +38,10 @@ def init_db():
             url = str(row['URL'])
             fecha = pd.to_datetime(row['Fecha']).date().isoformat()  # 'YYYY-MM-DD'
 
-        c.execute('''
-            INSERT INTO propiedades (Orden, Producto, Precio, Ciudad, URL, Fecha)
-            VALUES (?, ?, ?, ?, ?, ?)
-        ''', (orden, producto, precio, ciudad, url, fecha))
+            c.execute('''
+                INSERT INTO propiedades (Orden, Producto, Precio, Ciudad, URL, Fecha)
+                VALUES (?, ?, ?, ?, ?, ?)
+            ''', (orden, producto, precio, ciudad, url, fecha))
 
         conn.commit()
 
